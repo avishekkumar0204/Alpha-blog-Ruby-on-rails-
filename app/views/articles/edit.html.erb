@@ -1,0 +1,34 @@
+<h3>Edit article here</h3>
+
+
+<% if @article.errors.any? %>
+    <h3>Following are the errors</h3>
+
+    <ul>
+        <% @article.errors.full_messages.each do |error|%>
+            <li>
+                <%= error%>
+            </li>
+
+        <% end %>
+    </ul>
+
+<%end%>
+
+<%= form_with model: @article, url: article_path(@article), method: :patch, local: true do |f| %>
+    <p>
+        <%= f.label :title %>
+        <br/>
+        <%= f.text_field :title %>
+    </p>
+    
+    <p>
+        <%= f.label :desc %>
+        <br/>
+        <%= f.text_area :desc%>
+    </p>
+    <p>
+        <%= f.submit%>
+    </p>
+<% end %>
+
