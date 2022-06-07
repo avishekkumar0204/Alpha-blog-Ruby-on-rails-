@@ -1,3 +1,5 @@
+<% provide(:title, "Articles") %>
+
 <h1>Articles</h1>
 
 <table>
@@ -14,7 +16,6 @@
             <tr>
                 <td><%= article.title %></td>
                 <td><%= article.desc %></td>
-                <td><%= article.user %></td>
                 <td>
                     <%= link_to "Delete", article_path(article), method: :delete%> |
                     <%= link_to "Show", article_path(article)%> |

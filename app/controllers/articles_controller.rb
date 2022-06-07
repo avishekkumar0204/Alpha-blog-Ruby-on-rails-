@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
 
     def create
         @article=Article.new(params.require(:article).permit(:title,:desc));
-        @article.user_id=User.last.id
+        # @article.user_id=User.last.id
         if @article.save
             flash[:notice] = "This article was saved successfully"
             redirect_to article_path(@article)
