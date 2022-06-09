@@ -4,15 +4,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    
     @user=User.find(params[:id])
-
   end
 
   def create
     @user=User.new(user_params)
-    # logger.debug "Inside Create Action: #{@user.inspect}"
-    # byebug
     if @user.save
       logger.debug "After saving user: #{flash}"
         flash[:notice] = "This account is created successfully"
